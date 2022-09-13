@@ -1,6 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
-// import Budget from "./components/Budget";
+import { useState, useEffect } from "react"
+import { Parragraf, Header } from "./components/Styles";
+import Panel from "./components/Panel";
 
 function App() {
   const [webChecked, setWebChecked] = useState(false);
@@ -31,8 +32,8 @@ function App() {
 
   return (
     <div>
-      <header>¿Qué quieres hacer?</header>
-      <p>
+      <Header>¿Qué quieres hacer?</Header>
+      <Parragraf>
         <input
           type="checkbox"
           value="500"
@@ -41,8 +42,9 @@ function App() {
           onChange={handleWebChange}
         />
         Una página web (500€) <br />
-      </p>
-      <p>
+      </Parragraf>
+      <Panel/>
+      <Parragraf>
         <input
           type="checkbox"
           value="300"
@@ -51,8 +53,8 @@ function App() {
           onChange={handleSeoChange}
         />
         Una consulta SEO (300€) <br />
-      </p>
-      <p>
+      </Parragraf>
+      <Parragraf>
         <input
           type="checkbox"
           value="200"
@@ -61,9 +63,9 @@ function App() {
           onChange={handleAdsChange}
         />
         Una campaña Google Ads (200€) <br />
-      </p>
+      </Parragraf>
 
-      <p>Total: {budget} </p>
+      <Parragraf>Total: {budget} </Parragraf>
     </div>
   );
 }
