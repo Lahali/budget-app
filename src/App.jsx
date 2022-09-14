@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import { Parragraf, Header } from "./components/Styles";
 import Panel from "./components/Panel";
 
@@ -11,15 +11,17 @@ function App() {
 
   useEffect(() => {
     setBudget(0);
-    webChecked && setBudget((prev) => prev + 500);
+    webChecked && setBudget((prev) => prev + (pages * languages * 30 + 500));
     seoChecked && setBudget((prev) => prev + 300);
     adsChecked && setBudget((prev) => prev + 200);
     console.log("holiii");
   });
 
-  // No es necesario hacer un ternario, así ya se cambia el state de false a true y viceversa
+  // No es necesario hacer un ternario, así ya se cambia el state de fal se a true y viceversa
   const handleWebChange = () => {
     setWebChecked(!webChecked);
+    setLanguages(0);
+    setPages(0);
   };
 
   const handleSeoChange = () => {
@@ -30,9 +32,21 @@ function App() {
     setAdsChecked(!adsChecked);
   };
 
+  const [pages, setPages] = useState(0);
+  const [languages, setLanguages] = useState(0);
+
+  const handlePage = (e) => {
+    setPages(Number(e.target.value));
+  };
+
+  const handleLanguage = (e) => {
+    setLanguages(Number(e.target.value));
+  };
+
   return (
     <div>
       <Header>¿Qué quieres hacer?</Header>
+
       <Parragraf>
         <input
           type="checkbox"
@@ -43,7 +57,17 @@ function App() {
         />
         Una página web (500€) <br />
       </Parragraf>
-      <Panel/>
+
+      {webChecked && ( 
+
+      <Panel
+        handlePage={handlePage}
+        handleLanguage={handleLanguage}
+        pages={pages}
+        languages={languages}
+      />
+      )}
+
       <Parragraf>
         <input
           type="checkbox"
@@ -54,6 +78,7 @@ function App() {
         />
         Una consulta SEO (300€) <br />
       </Parragraf>
+
       <Parragraf>
         <input
           type="checkbox"
