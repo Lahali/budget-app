@@ -1,49 +1,21 @@
 import React from "react";
+import { useState } from "react";
 import { PanelStyled, Input, ButtonStyled } from "./Styles";
-import Buttons from "./Buttons";
 
-const Panel = ({
-  handleLanguage,
-  handlePage,
-  languages,
-  pages,
-  addPage,
-  decreasePage,
-  addLanguage,
-  decreaseLanguage
-}) => {
+const Panel = (props) => {
+
   return (
     <div>
       <PanelStyled>
         <p>
-          Número de páginas{" "}
-          <ButtonStyled type="button" onClick={addPage}>
-            +
-          </ButtonStyled>
-          <Input
-            type="text"
-            placeholder="páginas"
-            id="pages"
-            value={pages}
-            onChange={handlePage}
-          />
-          <ButtonStyled type="button" onClick={decreasePage}>
-            -
-          </ButtonStyled>
+          Número de páginas <ButtonStyled type="button" >+</ButtonStyled>
+          <Input type="text" placeholder="páginas" name="pages" />
+          <ButtonStyled type="button">-</ButtonStyled>
         </p>
         <p>
-          Número de idiomas{" "}
-          <ButtonStyled type="button" onClick={addLanguage}>
-            +
-          </ButtonStyled>
-          <Input
-            type="text"
-            placeholder="idiomas"
-            id="languages"
-            value={languages}
-            onChange={handleLanguage}
-          />
-          <ButtonStyled type="button" onClick={decreaseLanguage}>-</ButtonStyled>
+          Número de idiomas <ButtonStyled type="button">+</ButtonStyled>
+          <Input type="text" placeholder="idiomas" name="languages" />
+          <ButtonStyled type="button">-</ButtonStyled>
         </p>
       </PanelStyled>
     </div>
@@ -51,3 +23,12 @@ const Panel = ({
 };
 
 export default Panel;
+
+// handleLanguage,
+// handlePage,
+// languages,
+// pages,
+// addPage,
+// decreasePage,
+// addLanguage,
+// decreaseLanguage
