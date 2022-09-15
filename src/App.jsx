@@ -8,40 +8,61 @@ function App() {
   const [seoChecked, setSeoChecked] = useState(false);
   const [adsChecked, setAdsChecked] = useState(false);
   const [budget, setBudget] = useState(0);
+  const [pages, setPages] = useState(0);
+  const [languages, setLanguages] = useState(0);
 
   useEffect(() => {
     setBudget(0);
-    webChecked && setBudget((prev) => prev + (pages * languages * 30 + 500));
-    seoChecked && setBudget((prev) => prev + 300);
-    adsChecked && setBudget((prev) => prev + 200);
+    updateBudget();
     console.log("holiii");
   });
 
-  // No es necesario hacer un ternario, así ya se cambia el state de fal se a true y viceversa
+  const updateBudget = () => {
+    webChecked && setBudget((prev) => prev + (pages * languages * 30 + 500));
+    seoChecked && setBudget((prev) => prev + 300);
+    adsChecked && setBudget((prev) => prev + 200);
+  };
+
   const handleWebChange = () => {
     setWebChecked(!webChecked);
     setLanguages(0);
     setPages(0);
   };
-
   const handleSeoChange = () => {
     setSeoChecked(!seoChecked);
   };
-
   const handleAdsChange = () => {
     setAdsChecked(!adsChecked);
   };
 
-  const [pages, setPages] = useState(0);
-  const [languages, setLanguages] = useState(0);
-
   const handlePage = (e) => {
     setPages(Number(e.target.value));
+    addPage()
+    decreasePage()
   };
-
   const handleLanguage = (e) => {
     setLanguages(Number(e.target.value));
   };
+
+  const addPage = () => {
+    setPages(prev => prev + 1)
+  }
+
+  const decreasePage = () => {
+    if(pages <= 0) return
+    setPages(prev => prev - 1)
+  }
+
+  const addLanguage = () => {
+    setLanguages(prev => prev + 1)
+  }
+
+  const decreaseLanguage = () => {
+    if(languages <= 0) return
+    setLanguages(prev => prev - 1)
+  }
+
+
 
   return (
     <div>
@@ -58,14 +79,17 @@ function App() {
         Una página web (500€) <br />
       </Parragraf>
 
-      {webChecked && ( 
-
-      <Panel
-        handlePage={handlePage}
-        handleLanguage={handleLanguage}
-        pages={pages}
-        languages={languages}
-      />
+      {webChecked && (
+        <Panel
+          handlePage={handlePage}
+          handleLanguage={handleLanguage}
+          pages={pages}
+          languages={languages}
+          addPage={addPage}
+          decreasePage={decreasePage}
+          addLanguage={addLanguage}
+          decreaseLanguage={decreaseLanguage}
+        />
       )}
 
       <Parragraf>
