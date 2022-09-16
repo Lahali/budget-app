@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Parragraf, Header } from "./components/Styles";
-import Panel from "./components/Panel";
+// import { Parragraf, Header } from "./components/Styles";
+// import Panel from "./components/Panel";
 import Layout from "./components/Layout";
 
 function App() {
@@ -45,6 +45,15 @@ function App() {
   };
 
 
+  const updatePages = (event) => {
+    if(!event) return
+    const name = event.target.name
+    const value = Number(event.target.value)
+    const newBudget = {...budget}
+   
+    newBudget[name] = value
+    setBudget(newBudget)
+  }
 
   // localStorage
   // useEffect(() => {
@@ -54,7 +63,7 @@ function App() {
   return (
     <div>
       {budget.webSite ? "ueee" : "uooo"}
-      <Layout budget={budget} updateBudget2={updateBudget2}/>
+      <Layout budget={budget} updateBudget2={updateBudget2} updatePages={updatePages}/>
     </div>
     //   <div>
     //     <Header>¿Qué quieres hacer?</Header>
