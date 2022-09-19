@@ -7,14 +7,17 @@ const Layout = (props) => {
     <div>
       <Header>¿Qué quieres hacer?</Header>
       <Parragraf>
-        <input type="checkbox" 
-        name="webSite" 
-        onChange={props.updateBudget2} 
-        />
+        <input type="checkbox" name="webSite" onChange={props.updateBudget2} />
         Una página web (500€) <br />
       </Parragraf>
 
-      {props.budget.webSite && <Panel budget={props.budget} updateBudget2={props.updateBudget2}/>}
+      {props.budget.webSite && (
+        <Panel
+          budget={props.budget}
+          updateBudget2={props.updateBudget2}
+          updatePages={props.updatePages}
+        />
+      )}
 
       <Parragraf>
         <input

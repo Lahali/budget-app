@@ -3,21 +3,35 @@ import { useState } from "react";
 import { PanelStyled, Input, ButtonStyled } from "./Styles";
 
 const Panel = (props) => {
-  
-//  FALTA UN ONCHANGE EN LOS INPUTS, ECHAR UN OJO AL ERROR QUE DA EN CONSOLA
+  //  FALTA UN ONCHANGE EN LOS INPUTS, ECHAR UN OJO AL ERROR QUE DA EN CONSOLA
 
   return (
     <div>
-      {props.budget.pages > 0 ? "hey!" : "hoo!"}
+      {props.budget.pages > 0 ? "ho!" : "hey!"}
       <PanelStyled>
         <p>
-          Número de páginas <ButtonStyled type="button" onClick={props.updatePages}>+</ButtonStyled>
-          <Input type="text" placeholder="páginas" name="pages" value={props.budget.pages} onChange={props.updatePages}/>
+          Número de páginas{" "}
+          <ButtonStyled type="button" onClick={props.updatePages}>
+            +
+          </ButtonStyled>
+          <Input
+            type="text"
+            placeholder="páginas"
+            name="pages"
+            value={props.budget.pages}
+            onChange={props.updateBudget2}
+          />
           <ButtonStyled type="button">-</ButtonStyled>
         </p>
         <p>
           Número de idiomas <ButtonStyled type="button">+</ButtonStyled>
-          <Input type="text" placeholder="idiomas" name="languages" />
+          <Input
+            type="text"
+            placeholder="idiomas"
+            name="languages"
+            onChange={props.updateBudget2}
+            value={props.budget.languages}
+          />
           <ButtonStyled type="button">-</ButtonStyled>
         </p>
       </PanelStyled>

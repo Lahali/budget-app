@@ -10,7 +10,6 @@ function App() {
   // const [adsChecked, setAdsChecked] = useState(false);
   // const [pages, setPages] = useState(0);
   // const [languages, setLanguages] = useState(0);
-  
 
   const [budget, setBudget] = useState({
     webSite: false,
@@ -20,40 +19,42 @@ function App() {
     languages: 0,
   });
 
-
-
   // function calculateTotal () {
-  //   total = budget.seo? 500 : 0  + budget.webSite, etc 
+  //   total = budget.seo? 500 : 0  + budget.webSite, etc
   // } esto tendría que ir aparte en una carpeta utils, x ejemplo
-
 
   useEffect(() => {
     //setBudget(0);
     // updateBudget();
   }, []);
 
- 
+  //  Hay dos opciones de hacerlo: se puede hacer todo en una función, o dos funciones:
+  //  una para el input y otra para el checkbox. 
+  // Como solo hay 2 inputs, lo vamos a hacer con una sola función
 
   const updateBudget2 = (event) => {
-    if(!event) return;
+    if (!event) return;
     let name = event.target.name;
-    let value = event.target.checked;
-    let newBudget = { ...budget };
+    // Validar si es un checkbox o un input
+    let newValue = event.target.checked || Number(event.target.value);
 
-    newBudget[name] = value;
+    // let check = event.target.checked;
+    // let value = Number(event.target.value)
+
+    let newBudget = { ...budget };
+    newBudget[name] = newValue;
     setBudget(newBudget);
   };
 
+  // const updatePages = (event) => {
+  //   let name = event.target.name
+  //   let value = Number(event.target.value)
+  //   let newBudget = {...budget}
 
-  const updatePages = (event) => {
-    if(!event) return
-    const name = event.target.name
-    const value = Number(event.target.value)
-    const newBudget = {...budget}
-   
-    newBudget[name] = value
-    setBudget(newBudget)
-  }
+  //   newBudget[name] = value
+  //   setBudget(newBudget)
+
+  // }
 
   // localStorage
   // useEffect(() => {
@@ -63,7 +64,10 @@ function App() {
   return (
     <div>
       {budget.webSite ? "ueee" : "uooo"}
-      <Layout budget={budget} updateBudget2={updateBudget2} updatePages={updatePages}/>
+      <Layout
+        budget={budget}
+        updateBudget2={updateBudget2}
+      />
     </div>
     //   <div>
     //     <Header>¿Qué quieres hacer?</Header>
@@ -144,6 +148,7 @@ export default App;
 //   addPage()
 //   decreasePage()
 // };
+
 // const handleLanguage = (e) => {
 //   setLanguages(Number(e.target.value));
 // };
