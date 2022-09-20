@@ -3,7 +3,7 @@ import { useState } from "react";
 import { PanelStyled, Input, ButtonStyled } from "./Styles";
 
 const Panel = (props) => {
-  //  FALTA UN ONCHANGE EN LOS INPUTS, ECHAR UN OJO AL ERROR QUE DA EN CONSOLA
+ 
 
   return (
     <div>
@@ -11,7 +11,8 @@ const Panel = (props) => {
       <PanelStyled>
         <p>
           Número de páginas{" "}
-          <ButtonStyled type="button" onClick={props.updatePages}>
+          {/* callback para pasar elementos */}
+          <ButtonStyled type="button" onClick={()=>props.increaseButton('pages')}>
             +
           </ButtonStyled>
           <Input
@@ -19,17 +20,20 @@ const Panel = (props) => {
             placeholder="páginas"
             name="pages"
             value={props.budget.pages}
-            onChange={props.updateBudget2}
+            onChange={props.budgetPanel}
           />
-          <ButtonStyled type="button">-</ButtonStyled>
+          <ButtonStyled type="button" onClick={props.decreaseButton}>-</ButtonStyled>
         </p>
         <p>
-          Número de idiomas <ButtonStyled type="button">+</ButtonStyled>
+          Número de idiomas 
+          <ButtonStyled 
+          type="button"
+          onClick={()=>props.increaseButton('languages')}>+</ButtonStyled>
           <Input
             type="text"
             placeholder="idiomas"
             name="languages"
-            onChange={props.updateBudget2}
+            onChange={props.budgetPanel}
             value={props.budget.languages}
           />
           <ButtonStyled type="button">-</ButtonStyled>
@@ -41,11 +45,4 @@ const Panel = (props) => {
 
 export default Panel;
 
-// handleLanguage,
-// handlePage,
-// languages,
-// pages,
-// addPage,
-// decreasePage,
-// addLanguage,
-// decreaseLanguage
+

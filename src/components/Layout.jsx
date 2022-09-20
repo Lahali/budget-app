@@ -15,7 +15,9 @@ const Layout = (props) => {
         <Panel
           budget={props.budget}
           updateBudget2={props.updateBudget2}
-          updatePages={props.updatePages}
+          increaseButton={props.increaseButton}
+          decreaseButton={props.decreaseButton}
+          budgetPanel={props.budgetPanel}
         />
       )}
 
@@ -36,7 +38,7 @@ const Layout = (props) => {
         />
         Una campaña Google Ads (200€) <br />
       </Parragraf>
-      <Parragraf>Total: {}</Parragraf>
+      <Parragraf>Total: {props.total}</Parragraf>
     </div>
   );
 };
