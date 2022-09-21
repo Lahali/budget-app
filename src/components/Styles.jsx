@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
+export const HeaderStyled = styled.header`
   margin: 1.5rem;
   font-size: larger;
   font-weight: bold;
@@ -18,7 +18,7 @@ export const PanelStyled = styled.form`
   box-shadow: 0.75rem 0.75rem 0.2rem #EFEFEF;
 `;
 
-export const Parragraf = styled.p`
+export const ParragrafStyled = styled.p`
   margin: 1.5rem;
 `;
 
@@ -42,7 +42,7 @@ export const ButtonStyled = styled.button`
 
 `;
 
-export const Input = styled.input`
+export const InputStyled = styled.input`
   width: 3rem;
   height: auto;
   font-size: large;
@@ -52,4 +52,4 @@ export const Input = styled.input`
   border-radius: 0.5rem;
 `;
 
-export const Container = styled.div``;
+
