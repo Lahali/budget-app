@@ -1,7 +1,6 @@
 import React from "react";
 import { DivStyled, NavStyled, LinkStyled, ParragrafStyled } from "./Styles";
 import Panel from "./Panel";
-import Welcome from "./Welcome";
 
 const Layout = (props) => {
   return (
