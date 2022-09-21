@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
-import Layout from "./Layout";
+
 import {
   DivStyled,
   HeaderStyled,

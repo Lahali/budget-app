@@ -1,8 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
-import Welcome from "./Welcome";
 
 const Main = () => {
   const [budget, setBudget] = useState({
