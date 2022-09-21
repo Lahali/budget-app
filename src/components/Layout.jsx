@@ -1,12 +1,12 @@
 import React from "react";
-import { HeaderStyled, ParragrafStyled } from "./Styles";
+import { DivStyled, NavStyled, LinkStyled, ParragrafStyled } from "./Styles";
 import Panel from "./Panel";
 import Welcome from "./Welcome";
 
 const Layout = (props) => {
   return (
-    <div>
-      <HeaderStyled>¿Qué quieres hacer?</HeaderStyled>
+    <DivStyled>
+      <h2>¿Qué quieres hacer?</h2>
       <ParragrafStyled>
         <input type="checkbox" name="webSite" onChange={props.updateBudget2} />
         Una página web (500€) <br />
@@ -40,7 +40,10 @@ const Layout = (props) => {
         Una campaña Google Ads (200€) <br />
       </ParragrafStyled>
       <ParragrafStyled>Total: {props.total}</ParragrafStyled>
-    </div>
+      <NavStyled>
+          <LinkStyled to="/">Volver</LinkStyled>
+        </NavStyled>
+    </DivStyled>
   );
 };
 

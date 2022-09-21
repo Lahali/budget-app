@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { PanelStyled, InputStyled, ButtonStyled } from "./Styles";
 
 const Panel = (props) => {
@@ -25,7 +24,7 @@ const Panel = (props) => {
           <ButtonStyled type="button" onClick={()=>props.decreaseButton('pages')}>-</ButtonStyled>
         </p>
         <p>
-          Número de idiomas 
+          Número de idiomas
           <ButtonStyled 
           type="button"
           onClick={()=>props.increaseButton('languages')}>+</ButtonStyled>

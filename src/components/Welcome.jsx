@@ -1,19 +1,30 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
-import { HeaderStyled, ParragrafStyled } from "./Styles";
+import {
+  DivStyled,
+  HeaderStyled,
+  LinkStyled,
+  WelcomeParragrafStyled,
+  NavStyled,
+} from "./Styles";
 
 const Welcome = () => {
   return (
     <div>
-      <HeaderStyled>
-        <h2>Calcula tu presupuesto</h2>
-      </HeaderStyled>
-      <ParragrafStyled>¿Necesitas una página web?</ParragrafStyled>
-      <ParragrafStyled>Entra y te hacemos un presupuesto que se ajuste a tus necesidades</ParragrafStyled>
-        <nav>
-           <Link to="/budget">Calcular</Link>
-        </nav>
+      <DivStyled>
+        <HeaderStyled>
+          <h2>Calcula tu presupuesto</h2>
+        </HeaderStyled>
+        <WelcomeParragrafStyled>
+          ¿Necesitas una página web?
+          <br />
+          Entra y te hacemos un presupuesto que se ajuste a tus necesidades
+        </WelcomeParragrafStyled>
+        <NavStyled>
+          <LinkStyled to="/budget">Calcular</LinkStyled>
+        </NavStyled>
+      </DivStyled>
     </div>
   );
 };

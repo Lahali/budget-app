@@ -1,12 +1,15 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
   margin: 1.5rem;
   font-size: larger;
   font-weight: bold;
+  text-align: center;
 `;
 
 export const PanelStyled = styled.form`
+  text-align: center;
   justify-content: center;
   align-items: center;
   border: solid 2px #efefef;
@@ -19,9 +22,16 @@ export const PanelStyled = styled.form`
 `;
 
 export const ParragrafStyled = styled.p`
-  margin: 1.5rem;
+  /* margin: 1.5rem; */
+  line-height: 2rem;
 `;
 
+
+export const WelcomeParragrafStyled = styled.p`
+  margin: 2rem;
+  line-height: 2rem;
+  text-align: center;
+`;
 
 export const ButtonStyled = styled.button`
   width: 2rem;
@@ -30,14 +40,14 @@ export const ButtonStyled = styled.button`
   font-size: 1.4rem;
   font-weight: bolder;
   text-align: center;
-  background-color: #FF87B2;
+  background-color: #00AFC1;
   color: #FFF8BC;
-  border: solid 2px #FF87B2;
+  border: solid 2px #00AFC1;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 &:hover {
   background-color: #FFF8BC;
-  color: #FF87B2;
+  color: #00AFC1;
 }
 
 `;
@@ -52,4 +62,29 @@ export const InputStyled = styled.input`
   border-radius: 0.5rem;
 `;
 
+export const LinkStyled = styled(Link)`
+  color: #00AFC1;
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+
+  &:hover {
+    color: #0093AB;
+  }
+`
+export const DivStyled = styled.div`
+  color: #006778 ;
+  padding: 5rem;
+  margin: auto;
+`
+
+export const NavStyled = styled.nav`
+background-color: #FFE9A0;
+min-height: 4rem;
+border-radius: 1rem;
+padding: 10px;
+max-width: 100%;
+text-align: center;
+margin-top: 4rem;
+`
 
