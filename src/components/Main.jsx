@@ -12,7 +12,12 @@ const Main = () => {
   });
 
   const [total, setTotal] = useState(0);
-
+  
+  // FUNCIONALIDAD DEL MODAL
+  // const [isModalOpen, setIsModalOpen] = useState(false)
+  // const changeModal = () => setIsModalOpen(!isModalOpen)
+  
+  
   //  Hay dos opciones de hacerlo: se puede hacer todo en una función, o dos funciones:
   //  una para el input y otra para el checkbox.
   // Como solo hay 2 inputs, lo vamos a hacer con una sola función
@@ -27,6 +32,7 @@ const Main = () => {
     newBudget[name] = newValue;
 
     setBudget(newBudget);
+    saveBudget(newBudget);
   };
 
   const budgetPanel = (event) => {
@@ -36,19 +42,22 @@ const Main = () => {
     newBudget[name] = newNumberValue;
 
     setBudget(newBudget);
+    saveBudget(newBudget);
   };
 
-  const increaseButton = (type) => {
+  const activateButton = (type, action) => {
+    
     let newBudget = { ...budget };
-    newBudget[type] = newBudget[type] + 1;
+    newBudget[type] = action === 'increase' ? newBudget[type] + 1 : newBudget[type] -1
     setBudget(newBudget);
+    saveBudget(newBudget);
   };
 
   const decreaseButton = (type) => {
-    if (budget.pages <= 0) return;
-    let newBudget = { ...budget };
-    newBudget[type] = newBudget[type] - 1;
-    setBudget(newBudget);
+    // if (budget.pages <= 0) return;
+    // let newBudget = { ...budget };
+    // newBudget[type] = newBudget[type] - 1;
+    // setBudget(newBudget);
   };
 
   const calculateTotal = () => {
@@ -65,30 +74,33 @@ const Main = () => {
 
   // localStorage
   // con este estamos definiendo el localstorage
-  const saveBudget = () => {
-    localStorage.setItem("budget", JSON.stringify(budget));
+  const saveBudget = (newBudget) => {
+    localStorage.setItem("budget", JSON.stringify(newBudget));
   };
   useEffect(() => {
-    saveBudget();
+    
   }, [budget]);
 
   // el getBudget todavía no se está utilizando, lo usaremos para guardar varios presupuestos
   const getBudget = () => {
-    localStorage.getItem("budget");
+    let newBudget = JSON.parse(localStorage.getItem("budget")) 
+    newBudget && setBudget(newBudget)
   };
   useEffect(() => {
     getBudget();
-  }, [budget]);
+  }, []);
+
 
   return (
     <div>
       <Layout
         budget={budget}
         updateBudget2={updateBudget2}
-        increaseButton={increaseButton}
-        decreaseButton={decreaseButton}
+        activateButton={activateButton}
         budgetPanel={budgetPanel}
         total={total}
+        // changeModal={changeModal}
+        // isModalOpen={isModalOpen}
       />
     </div>
   );

@@ -1,5 +1,7 @@
 import React from "react";
+import ModalContent from "./ModalContent";
 import { PanelStyled, InputStyled, ButtonStyled } from "./Styles";
+// import ModalContent from "./ModalContent";
 
 const Panel = (props) => {
  
@@ -9,9 +11,9 @@ const Panel = (props) => {
       {/* {props.budget.pages > 0 ? "ho!" : "hey!"} */}
       <PanelStyled>
         <p>
-          Número de páginas{" "}
+          Número de páginas
           {/* callback para pasar elementos */}
-          <ButtonStyled type="button" onClick={()=>props.increaseButton('pages')}>
+          <ButtonStyled type="button" onClick={()=>props.activateButton('pages', 'increase')}>
             +
           </ButtonStyled>
           <InputStyled
@@ -21,13 +23,17 @@ const Panel = (props) => {
             value={props.budget.pages}
             onChange={props.budgetPanel}
           />
-          <ButtonStyled type="button" onClick={()=>props.decreaseButton('pages')}>-</ButtonStyled>
+          <ButtonStyled type="button" onClick={()=>props.activateButton('pages', 'decrease')}>-</ButtonStyled>
+          
+          {/* <ModalContent changeModal={props.changeModal} isModalOpen={props.isModalOpen}/> */}
+
         </p>
+        <ModalContent/>
         <p>
           Número de idiomas
           <ButtonStyled 
           type="button"
-          onClick={()=>props.increaseButton('languages')}>+</ButtonStyled>
+          onClick={()=>props.activateButton('languages', 'increase')}>+</ButtonStyled>
           <InputStyled
             type="text"
             placeholder="idiomas"
@@ -35,7 +41,7 @@ const Panel = (props) => {
             onChange={props.budgetPanel}
             value={props.budget.languages}
           />
-          <ButtonStyled type="button" onClick={()=>props.decreaseButton('languages')} >-</ButtonStyled>
+          <ButtonStyled type="button" onClick={()=>props.activateButton('languages', 'decrease')} >-</ButtonStyled>
         </p>
       </PanelStyled>
     </div>
