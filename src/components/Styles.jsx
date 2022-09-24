@@ -9,14 +9,15 @@ export const HeaderStyled = styled.header`
 `;
 
 export const PanelStyled = styled.form`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
   border: solid 2px #efefef;
   padding: 1rem;
   width: fit-content;
+
   height: auto;
   border-radius: 1rem;
   margin: 1.5rem;
@@ -100,19 +101,19 @@ export const ModalStyled = styled.div`
 `;
 
 export const ModalButton = styled.button`
-  width: 1rem;
+  width: fit-content;
   height: auto;
   border-radius: 0.5rem;
   /* font-size: 1.4rem; */
   font-weight: bolder;
   text-align: center;
-  background-color: #CDF0EA;
+  background-color: #cdf0ea;
   color: #006778;
-  border: solid 2px #CDF0EA;
+  border: solid 2px #cdf0ea;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   &:hover {
     background-color: #006778;
-    color: #CDF0EA;
+    color: #cdf0ea;
   }
-`
+`;

@@ -1,6 +1,6 @@
 import React from "react";
 import ModalContent from "./ModalContent";
-import { PanelStyled, InputStyled, ButtonStyled } from "./Styles";
+import { PanelStyled, InputStyled, ButtonStyled, ModalButton } from "./Styles";
 // import ModalContent from "./ModalContent";
 
 const Panel = (props) => {
@@ -24,11 +24,12 @@ const Panel = (props) => {
             onChange={props.budgetPanel}
           />
           <ButtonStyled type="button" onClick={()=>props.activateButton('pages', 'decrease')}>-</ButtonStyled>
+          {/* la fucionalidad no va, pero ya sale donde debería */}
+          <ModalButton onClick={props.changeModal}>in</ModalButton>
           
           {/* <ModalContent changeModal={props.changeModal} isModalOpen={props.isModalOpen}/> */}
-
         </p>
-        <ModalContent/>
+   
         <p>
           Número de idiomas
           <ButtonStyled 
