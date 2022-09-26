@@ -1,19 +1,20 @@
-import React from "react";
-import ModalContent from "./ModalContent";
+import React, { useState } from "react";
+import Modal from "./Modal";
 import { PanelStyled, InputStyled, ButtonStyled, ModalButton } from "./Styles";
-// import ModalContent from "./ModalContent";
 
 const Panel = (props) => {
- 
+
 
   return (
-    <div>
-      {/* {props.budget.pages > 0 ? "ho!" : "hey!"} */}
+    <>
       <PanelStyled>
-        <p>
+       
           Número de páginas
           {/* callback para pasar elementos */}
-          <ButtonStyled type="button" onClick={()=>props.activateButton('pages', 'increase')}>
+          <ButtonStyled
+            type="button"
+            onClick={() => props.activateButton("pages", "increase")}
+          >
             +
           </ButtonStyled>
           <InputStyled
@@ -23,18 +24,23 @@ const Panel = (props) => {
             value={props.budget.pages}
             onChange={props.budgetPanel}
           />
-          <ButtonStyled type="button" onClick={()=>props.activateButton('pages', 'decrease')}>-</ButtonStyled>
-          {/* la fucionalidad no va, pero ya sale donde debería */}
-          <ModalButton onClick={props.changeModal}>in</ModalButton>
-          
-          {/* <ModalContent changeModal={props.changeModal} isModalOpen={props.isModalOpen}/> */}
-        </p>
-   
-        <p>
+          <ButtonStyled
+            type="button"
+            onClick={() => props.activateButton("pages", "decrease")}
+          >
+            -
+          </ButtonStyled>
+          <Modal text="¿Cuántas páginas necesitas? Pon mínimo una."/>
+     </PanelStyled>
+    <PanelStyled>
+        
           Número de idiomas
-          <ButtonStyled 
-          type="button"
-          onClick={()=>props.activateButton('languages', 'increase')}>+</ButtonStyled>
+          <ButtonStyled
+            type="button"
+            onClick={() => props.activateButton("languages", "increase")}
+          >
+            +
+          </ButtonStyled>
           <InputStyled
             type="text"
             placeholder="idiomas"
@@ -42,13 +48,16 @@ const Panel = (props) => {
             onChange={props.budgetPanel}
             value={props.budget.languages}
           />
-          <ButtonStyled type="button" onClick={()=>props.activateButton('languages', 'decrease')} >-</ButtonStyled>
-        </p>
+          <ButtonStyled
+            type="button"
+            onClick={() => props.activateButton("languages", "decrease")}
+          >
+            -
+          </ButtonStyled>
+        <Modal text="¿Cuántos idiomas necesitas? Pon mínimo uno"/>
       </PanelStyled>
-    </div>
+    </>
   );
 };
 
 export default Panel;
-
-

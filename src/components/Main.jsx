@@ -12,12 +12,11 @@ const Main = () => {
   });
 
   const [total, setTotal] = useState(0);
-  
+
   // FUNCIONALIDAD DEL MODAL
   // const [isModalOpen, setIsModalOpen] = useState(false)
   // const changeModal = () => setIsModalOpen(!isModalOpen)
-  
-  
+
   //  Hay dos opciones de hacerlo: se puede hacer todo en una función, o dos funciones:
   //  una para el input y otra para el checkbox.
   // Como solo hay 2 inputs, lo vamos a hacer con una sola función
@@ -46,19 +45,13 @@ const Main = () => {
   };
 
   const activateButton = (type, action) => {
-    
     let newBudget = { ...budget };
-    newBudget[type] = action === 'increase' ? newBudget[type] + 1 : newBudget[type] -1
+    newBudget[type] =
+      action === "increase" ? newBudget[type] + 1 : newBudget[type] - 1;
     setBudget(newBudget);
     saveBudget(newBudget);
   };
 
-  const decreaseButton = (type) => {
-    // if (budget.pages <= 0) return;
-    // let newBudget = { ...budget };
-    // newBudget[type] = newBudget[type] - 1;
-    // setBudget(newBudget);
-  };
 
   const calculateTotal = () => {
     let newTotal =
@@ -69,7 +62,9 @@ const Main = () => {
   };
 
   useEffect(() => {
-    calculateTotal();
+    if (budget.pages > 0 && budget.languages > 0) {
+      calculateTotal();
+    }
   }, [budget]);
 
   // localStorage
@@ -77,19 +72,15 @@ const Main = () => {
   const saveBudget = (newBudget) => {
     localStorage.setItem("budget", JSON.stringify(newBudget));
   };
-  useEffect(() => {
-    
-  }, [budget]);
+  useEffect(() => {}, [budget]);
 
-  // el getBudget todavía no se está utilizando, lo usaremos para guardar varios presupuestos
   const getBudget = () => {
-    let newBudget = JSON.parse(localStorage.getItem("budget")) 
-    newBudget && setBudget(newBudget)
+    let newBudget = JSON.parse(localStorage.getItem("budget"));
+    newBudget && setBudget(newBudget);
   };
   useEffect(() => {
     getBudget();
   }, []);
-
 
   return (
     <div>
@@ -99,8 +90,8 @@ const Main = () => {
         activateButton={activateButton}
         budgetPanel={budgetPanel}
         total={total}
-        // changeModal={changeModal}
         // isModalOpen={isModalOpen}
+        // changeModal={changeModal}
       />
     </div>
   );

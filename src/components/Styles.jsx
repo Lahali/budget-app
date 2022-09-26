@@ -10,14 +10,13 @@ export const HeaderStyled = styled.header`
 
 export const PanelStyled = styled.form`
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   text-align: center;
   justify-content: center;
   align-items: center;
   border: solid 2px #efefef;
   padding: 1rem;
   width: fit-content;
-
   height: auto;
   border-radius: 1rem;
   margin: 1.5rem;
@@ -90,21 +89,32 @@ export const NavStyled = styled.nav`
 `;
 
 export const ModalStyled = styled.div`
-  position: fixed;
-  z-index: 999;
-  left: 0;
+display: flex;
+justify-content: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
   top: 0;
+  left: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
 `;
+
+export const ModalContentStyled = styled.p`
+  text-align: center;
+  padding: 1rem;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 1rem;
+ 
+  margin-top: 16rem;
+  background-color: #efefef;
+`
 
 export const ModalButton = styled.button`
   width: fit-content;
-  height: auto;
-  border-radius: 0.5rem;
-  /* font-size: 1.4rem; */
+  min-height: 1.5rem;
+  border-radius: 2rem;
+  font-size: 18px;
   font-weight: bolder;
   text-align: center;
   background-color: #cdf0ea;

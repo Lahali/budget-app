@@ -1,15 +1,25 @@
-import React from 'react'
-import ModalContent from './ModalContent'
-import { ModalStyled } from './Styles'
+import { useState } from "react";
+import { ModalButton, ModalContentStyled, ModalStyled } from "./Styles";
 
-const Modal = ({children}) => {
+const Modal = (props) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const changeModal = (e) => {
+    e.preventDefault();
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
-    <article>
-      <div>
-          {children}
-      </div>
-    </article>
-  )
-}
+    <div>
+      <ModalButton onClick={changeModal}>in</ModalButton>
+      {isModalOpen && (
+        <ModalStyled onClick={changeModal}>
+          <ModalContentStyled onClick={isModalOpen}>
+            {props.text}
+          </ModalContentStyled>
+        </ModalStyled>
+      )}
+    </div>
+  );
+};
 
-export default Modal
+export default Modal;
