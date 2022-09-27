@@ -162,5 +162,21 @@ padding: 1rem;
     color: #00afc1;
   }
 `
+export const ContainerListStyled = styled.div`
+display: flex;
+float: right;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px #efefef;
+  padding: 1rem;
+  min-width: 30%;
+  max-height: 40%;
+  border-radius: 1rem;
+  margin: 1.5rem;
+  overflow: auto;
 
+`
+export const DivListStyled = styled.div`
+  
+`
 
