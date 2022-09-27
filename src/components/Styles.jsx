@@ -8,7 +8,7 @@ export const HeaderStyled = styled.header`
   text-align: center;
 `;
 
-export const PanelStyled = styled.form`
+export const PanelStyled = styled.div`
   display: flex;
   /* flex-direction: column; */
   text-align: center;

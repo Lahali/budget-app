@@ -12,6 +12,9 @@ import Panel from "./Panel";
 const Layout = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
+    if([props.name, props.surname, props.total].includes('') ) {
+      return alert("Faltan campos por llenar")
+    }
   };
 
   return (
