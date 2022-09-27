@@ -24,7 +24,6 @@ export const PanelStyled = styled.form`
 `;
 
 export const ParragrafStyled = styled.p`
-  /* margin: 1.5rem; */
   line-height: 2rem;
 `;
 
@@ -126,4 +125,42 @@ export const ModalButton = styled.button`
     background-color: #006778;
     color: #cdf0ea;
   }
-`;
+`
+
+export const InputTextStyled = styled.input`
+  min-width: 5rem;
+  height: auto;
+  font-size: large;
+  box-shadow: 3px 3px 3px #efefef;
+  text-align: center;
+  border: solid 2px #efefef;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  background-color: white;
+  &:focus{
+    outline: none;
+    border: solid 2px #AFAFAF;
+    background-color: #efefef;
+  }
+`
+
+export const ButtonStyledSave = styled.button`
+  width: fit-content;
+  height: auto;
+  border-radius: 0.5rem;
+  font-size: 18px;
+  font-weight: bolder;
+  text-align: center;
+  background-color: #00afc1;
+  color: #fff8bc;
+  border: solid 2px #00afc1;
+padding: 1rem;
+  &:hover {
+    background-color: #fff8bc;
+    color: #00afc1;
+  }
+`
+
+

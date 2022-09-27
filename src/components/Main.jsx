@@ -13,13 +13,15 @@ const Main = () => {
 
   const [total, setTotal] = useState(0);
 
-  // FUNCIONALIDAD DEL MODAL
-  // const [isModalOpen, setIsModalOpen] = useState(false)
-  // const changeModal = () => setIsModalOpen(!isModalOpen)
+  // Nombre y Apellidos
+  const [name, setName] = useState('')
+  const [surname, setSurname] = useState('')
+
+  const getName = (event) => setName(event.target.value)
+  const getSurname = (event) => setSurname(event.target.value)
 
   //  Hay dos opciones de hacerlo: se puede hacer todo en una función, o dos funciones:
   //  una para el input y otra para el checkbox.
-  // Como solo hay 2 inputs, lo vamos a hacer con una sola función
   const updateBudget2 = (event) => {
     if (!event) return;
     let name = event.target.name;
@@ -52,7 +54,6 @@ const Main = () => {
     saveBudget(newBudget);
   };
 
-
   const calculateTotal = () => {
     let newTotal =
       (budget.seoConsulting ? +300 : 0) +
@@ -62,9 +63,7 @@ const Main = () => {
   };
 
   useEffect(() => {
-    if (budget.pages > 0 && budget.languages > 0) {
-      calculateTotal();
-    }
+    calculateTotal();
   }, [budget]);
 
   // localStorage
@@ -90,8 +89,10 @@ const Main = () => {
         activateButton={activateButton}
         budgetPanel={budgetPanel}
         total={total}
-        // isModalOpen={isModalOpen}
-        // changeModal={changeModal}
+        name={name}
+        surname={surname}
+        getName={getName}
+        getSurname={getSurname}
       />
     </div>
   );

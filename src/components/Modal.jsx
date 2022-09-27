@@ -10,10 +10,10 @@ const Modal = (props) => {
 
   return (
     <div>
-      <ModalButton onClick={changeModal}>in</ModalButton>
+      <ModalButton onClick={changeModal}>i</ModalButton>
       {isModalOpen && (
         <ModalStyled onClick={changeModal}>
-          <ModalContentStyled onClick={isModalOpen}>
+          <ModalContentStyled>
             {props.text}
           </ModalContentStyled>
         </ModalStyled>
