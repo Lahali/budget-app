@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "./Modal";
-import { PanelStyled, InputStyled, ButtonStyled, ModalButton } from "./Styles";
+import { PanelStyled, InputStyled, ButtonStyled } from "./Styles";
 
 const Panel = (props) => {
 

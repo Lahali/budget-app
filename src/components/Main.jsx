@@ -13,12 +13,28 @@ const Main = () => {
 
   const [total, setTotal] = useState(0);
 
-  // Nombre y Apellidos
   const [name, setName] = useState('')
   const [surname, setSurname] = useState('')
 
+  const [newBudget, setNewBudget] = useState([])
+
   const getName = (event) => setName(event.target.value)
   const getSurname = (event) => setSurname(event.target.value)
+
+
+  const addBudgetList = budgetNew => {
+    setNewBudget([...newBudget, budgetNew])
+    console.log(newBudget)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    if([name, surname, total].includes('')) {
+      return alert("Faltan campos por rellenar")
+    }
+    addBudgetList({name, surname, total})
+  }
+
 
   //  Hay dos opciones de hacerlo: se puede hacer todo en una función, o dos funciones:
   //  una para el input y otra para el checkbox.
@@ -93,6 +109,9 @@ const Main = () => {
         surname={surname}
         getName={getName}
         getSurname={getSurname}
+        addBudgetList = {addBudgetList}
+        handleSubmit={handleSubmit}
+        newBudget={newBudget}
       />
     </div>
   );

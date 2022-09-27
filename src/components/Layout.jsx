@@ -8,21 +8,15 @@ import {
   InputTextStyled,
 } from "./Styles";
 import Panel from "./Panel";
+import ListBudget from "./ListBudget";
 
 const Layout = (props) => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if([props.name, props.surname, props.total].includes('') ) {
-      return alert("Faltan campos por llenar")
-    }
-  };
-
   return (
     <DivStyled>
       <h2>¿Qué quieres hacer?</h2>
 
       {/* Así tenemos unidos el botón y el form para que funcione */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={props.handleSubmit}>
         <ParragrafStyled>
           <input
             type="checkbox"
@@ -38,8 +32,6 @@ const Layout = (props) => {
             budget={props.budget}
             activateButton={props.activateButton}
             budgetPanel={props.budgetPanel}
-            isModalOpen={props.isModalOpen}
-            changeModal={props.changeModal}
           />
         )}
 
@@ -83,9 +75,17 @@ const Layout = (props) => {
 
         <ParragrafStyled>Total: {props.total}</ParragrafStyled>
 
-          {/* esto está conectado con el handleSubmit del form */}
+        {/* esto está conectado con el handleSubmit del form */}
         <ButtonStyledSave type="submit">Guardar presupuesto</ButtonStyledSave>
       </form>
+      {props.newBudget.length > 0 && (
+        <ListBudget
+          budget={props.budget}
+          name={props.name}
+          surname={props.surname}
+          total={props.total}
+        />
+      )}
       <NavStyled>
         <LinkStyled to="/">Volver</LinkStyled>
       </NavStyled>
