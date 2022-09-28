@@ -9,11 +9,11 @@ const ListBudget = ({ newBudget, client, budgetName, budget, total }) => {
         <BudgetElement
           key={item.id}
           date={item.date}
-          client={client}
-          budgetName={budgetName}
-          budget={budget}
-          total={total}
-          newBudget={newBudget}
+          client={item.client}
+          budgetName={item.budgetName}
+          budget={item.budget}
+          total={item.total}
+          newBudget={item.newBudget}
         />
       ))}
     </ContainerScroll>

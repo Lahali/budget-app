@@ -2,7 +2,7 @@ import React from "react";
 import { formateDate } from "../helpers";
 import { ContainerListStyled, DivListStyled } from "./Styles";
 
-const BudgetElement = ({ client, budgetName, budget, total, date }) => {
+const BudgetElement = ({client, budgetName, total, date, budget }) => {
   return (
     <ContainerListStyled>
       <DivListStyled>

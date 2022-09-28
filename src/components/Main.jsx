@@ -28,17 +28,15 @@ const Main = () => {
     setNewBudget([...newBudget, budgetNew])
     
   }
-  //OJO Esto quitarlo luego
-  useEffect(() => {
-    console.log("New Budget-> ",newBudget)
-  }, [newBudget])
+
 
   const handleSubmit = (event) => {
     event.preventDefault()
     if([client, budgetName, total].includes('')) {
       return alert("Faltan campos por rellenar")
     }
-    addBudgetList({client, budgetName, total})
+    addBudgetList({client, budgetName, total, budget})
+  
   }
 
 
@@ -89,7 +87,6 @@ const Main = () => {
   }, [budget]);
 
   // localStorage
-  // con este estamos definiendo el localstorage
   const saveBudget = (newBudget) => {
     localStorage.setItem("budget", JSON.stringify(newBudget));
   };
@@ -103,11 +100,6 @@ const Main = () => {
     getBudget();
   }, []);
 
-
-  // Ordenar alfabéticamente los proyectos
-  // const alphabeticOrderedBudget = (a, b) => {
-  //   return a.budgetName.localeCompare(b.budgetName)
-  // }
 
 
   return (
@@ -125,7 +117,6 @@ const Main = () => {
         addBudgetList = {addBudgetList}
         handleSubmit={handleSubmit}
         newBudget={newBudget}
-        // alphabeticOrderedBudget={alphabeticOrderedBudget}
       />
     </div>
   );

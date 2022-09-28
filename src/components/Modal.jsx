@@ -13,7 +13,6 @@ const Modal = (props) => {
     // hemos buscado el nombre que da react al ModalContent para evitar que el modal se cierre al dar click sobre el texto.
     (e.target.attributes.class.value !== "sc-jqUVSM lprxEI"
     ) && setIsModalOpen(!isModalOpen)
-    console.log(e)
   }
 
   return (

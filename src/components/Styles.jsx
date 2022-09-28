@@ -98,6 +98,7 @@ export const NavStyled = styled.nav`
   grid-row-start: 5;
  
 
+
   background-color: #ffe9a0;
   max-height: 5rem;
   border-radius: 1rem;

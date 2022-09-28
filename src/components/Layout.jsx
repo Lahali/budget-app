@@ -87,7 +87,6 @@ const Layout = (props) => {
 
         {/* esto está conectado con el handleSubmit del form */}
         <ButtonStyledSave type="submit">Guardar presupuesto</ButtonStyledSave>
-        {/* <ButtonStyledSave onClick={props.alphabeticOrderedBudget()}>ordenar</ButtonStyledSave> */}
       </FormStyled>
         
       <NavStyled>
