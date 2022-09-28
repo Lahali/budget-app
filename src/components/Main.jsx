@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { generateId } from "../helpers/index";
 import Layout from "./Layout";
 
 const Main = () => {
@@ -13,26 +13,32 @@ const Main = () => {
 
   const [total, setTotal] = useState(0);
 
-  const [name, setName] = useState('')
-  const [surname, setSurname] = useState('')
+  const [client, setClient] = useState('')
+  const [budgetName, setbudgetName] = useState('')
 
   const [newBudget, setNewBudget] = useState([])
 
-  const getName = (event) => setName(event.target.value)
-  const getSurname = (event) => setSurname(event.target.value)
+  const getClient = (event) => setClient(event.target.value)
+  const getbudgetName = (event) => setbudgetName(event.target.value)
 
 
   const addBudgetList = budgetNew => {
+    budgetNew.id = generateId()
+    budgetNew.date = Date.now()
     setNewBudget([...newBudget, budgetNew])
-    console.log(newBudget)
+    
   }
+  //OJO Esto quitarlo luego
+  useEffect(() => {
+    console.log("New Budget-> ",newBudget)
+  }, [newBudget])
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if([name, surname, total].includes('')) {
+    if([client, budgetName, total].includes('')) {
       return alert("Faltan campos por rellenar")
     }
-    addBudgetList({name, surname, total})
+    addBudgetList({client, budgetName, total})
   }
 
 
@@ -105,10 +111,10 @@ const Main = () => {
         activateButton={activateButton}
         budgetPanel={budgetPanel}
         total={total}
-        name={name}
-        surname={surname}
-        getName={getName}
-        getSurname={getSurname}
+        client={client}
+        budgetName={budgetName}
+        getClient={getClient}
+        getbudgetName={getbudgetName}
         addBudgetList = {addBudgetList}
         handleSubmit={handleSubmit}
         newBudget={newBudget}

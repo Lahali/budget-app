@@ -72,6 +72,7 @@ export const LinkStyled = styled(Link)`
   }
 `;
 export const DivStyled = styled.div`
+  display: block;
   color: #006778;
   padding: 5rem;
   margin: auto;
@@ -163,17 +164,17 @@ padding: 1rem;
   }
 `
 export const ContainerListStyled = styled.div`
-display: flex;
+
 float: right;
   justify-content: center;
   align-items: center;
+  width: 30%;
+  height: fit-content;
+  margin: 1.5rem;
+  overflow-x: scroll;
   border: solid 2px #efefef;
   padding: 1rem;
-  min-width: 30%;
-  max-height: 40%;
   border-radius: 1rem;
-  margin: 1.5rem;
-  overflow: auto;
 
 `
 export const DivListStyled = styled.div`

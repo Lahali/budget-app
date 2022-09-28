@@ -14,12 +14,15 @@ const Layout = (props) => {
   return (
     <DivStyled>
       <h2>¿Qué quieres hacer?</h2>
+      {props.newBudget.length > 0 && (
         <ListBudget
+          newBudget={props.newBudget}
+          client={props.client}
+          budgetName={props.budgetName}
           budget={props.budget}
-          name={props.name}
-          surname={props.surname}
           total={props.total}
         />
+      )}
 
       {/* Así tenemos unidos el botón y el form para que funcione */}
       <form onSubmit={props.handleSubmit}>
@@ -62,20 +65,20 @@ const Layout = (props) => {
         </ParragrafStyled>
 
         <ParragrafStyled>
-          Añade tu nombre y apellidos: <br />
+          Añade tu nombre y da un nombre al presupuesto: <br />
           <InputTextStyled
             type="text"
             name="name"
-            value={props.name}
-            onChange={props.getName}
+            value={props.client}
+            onChange={props.getClient}
             placeholder="nombre"
           />
           <InputTextStyled
             type="text"
-            name="surname"
-            value={props.surname}
-            onChange={props.getSurname}
-            placeholder="apellidos"
+            name="budgetName"
+            value={props.budgetName}
+            onChange={props.getbudgetName}
+            placeholder="presupuesto"
           />
         </ParragrafStyled>
 
@@ -84,14 +87,6 @@ const Layout = (props) => {
         {/* esto está conectado con el handleSubmit del form */}
         <ButtonStyledSave type="submit">Guardar presupuesto</ButtonStyledSave>
       </form>
-      {/* {props.newBudget.length > 0 && (
-        <ListBudget
-          budget={props.budget}
-          name={props.name}
-          surname={props.surname}
-          total={props.total}
-        />
-      )} */}
       <NavStyled>
         <LinkStyled to="/">Volver</LinkStyled>
       </NavStyled>
