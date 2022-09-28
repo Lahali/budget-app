@@ -72,25 +72,43 @@ export const LinkStyled = styled(Link)`
   }
 `;
 export const DivStyled = styled.div`
-  display: block;
+
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 25% 25% 25% 25% ;
+
+
   color: #006778;
-  padding: 5rem;
+  padding: 4rem;
   margin: auto;
 `;
 
+export const FormStyled = styled.form`
+  grid-column-start: 1 ;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+`
+
 export const NavStyled = styled.nav`
+
+  grid-column-start: 1;
+  grid-column-end: 6;
+
+  grid-row-start: 5;
+ 
+
   background-color: #ffe9a0;
-  min-height: 4rem;
+  max-height: 5rem;
   border-radius: 1rem;
   padding: 10px;
-  max-width: 100%;
+  max-width: 100vw;
   text-align: center;
-  margin-top: 4rem;
 `;
 
 export const ModalStyled = styled.div`
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
@@ -105,10 +123,10 @@ export const ModalContentStyled = styled.p`
   width: fit-content;
   height: fit-content;
   border-radius: 1rem;
- 
+
   margin-top: 16rem;
   background-color: #efefef;
-`
+`;
 
 export const ModalButton = styled.button`
   width: fit-content;
@@ -126,7 +144,7 @@ export const ModalButton = styled.button`
     background-color: #006778;
     color: #cdf0ea;
   }
-`
+`;
 
 export const InputTextStyled = styled.input`
   min-width: 5rem;
@@ -140,12 +158,12 @@ export const InputTextStyled = styled.input`
   margin-right: 1rem;
   margin-top: 0.5rem;
   background-color: white;
-  &:focus{
+  &:focus {
     outline: none;
-    border: solid 2px #AFAFAF;
+    border: solid 2px #afafaf;
     background-color: #efefef;
   }
-`
+`;
 
 export const ButtonStyledSave = styled.button`
   width: fit-content;
@@ -157,27 +175,47 @@ export const ButtonStyledSave = styled.button`
   background-color: #00afc1;
   color: #fff8bc;
   border: solid 2px #00afc1;
-padding: 1rem;
+  padding: 1rem;
   &:hover {
     background-color: #fff8bc;
     color: #00afc1;
   }
-`
-export const ContainerListStyled = styled.div`
+`;
 
-float: right;
+export const ContainerScroll = styled.div`
+  grid-column-start: 3 ;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  overflow-y: scroll;
+`;
+
+export const ContainerListStyled = styled.div`
+  float: right;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  height: fit-content;
+  width: 50%;
   margin: 1.5rem;
-  overflow-x: scroll;
+`;
+export const DivListStyled = styled.div`
+  border-radius: 1rem;
   border: solid 2px #efefef;
   padding: 1rem;
+`;
+
+export const DivStyledNoGrid = styled.div`
+
+  color: #006778;
+  padding: 5rem;
+  margin: auto;
+`;
+
+export const NavStyledNoGrid = styled.nav`
+  background-color: #ffe9a0;
+  max-height: 4rem;
   border-radius: 1rem;
-
-`
-export const DivListStyled = styled.div`
-  
-`
-
+  padding: 10px;
+  max-width: 100vw;
+  text-align: center;
+  margin-top: 1rem;
+`;

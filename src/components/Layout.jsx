@@ -6,6 +6,7 @@ import {
   ParragrafStyled,
   ButtonStyledSave,
   InputTextStyled,
+  FormStyled
 } from "./Styles";
 import Panel from "./Panel";
 import ListBudget from "./ListBudget";
@@ -13,19 +14,19 @@ import ListBudget from "./ListBudget";
 const Layout = (props) => {
   return (
     <DivStyled>
-      <h2>¿Qué quieres hacer?</h2>
+
       {props.newBudget.length > 0 && (
         <ListBudget
-          newBudget={props.newBudget}
-          client={props.client}
-          budgetName={props.budgetName}
-          budget={props.budget}
-          total={props.total}
+        newBudget={props.newBudget}
+        client={props.client}
+        budgetName={props.budgetName}
+        budget={props.budget}
+        total={props.total}
         />
-      )}
-
+        )}
       {/* Así tenemos unidos el botón y el form para que funcione */}
-      <form onSubmit={props.handleSubmit}>
+      <FormStyled onSubmit={props.handleSubmit}>
+        <h2>¿Qué quieres hacer?</h2>
         <ParragrafStyled>
           <input
             type="checkbox"
@@ -86,7 +87,9 @@ const Layout = (props) => {
 
         {/* esto está conectado con el handleSubmit del form */}
         <ButtonStyledSave type="submit">Guardar presupuesto</ButtonStyledSave>
-      </form>
+        {/* <ButtonStyledSave onClick={props.alphabeticOrderedBudget()}>ordenar</ButtonStyledSave> */}
+      </FormStyled>
+        
       <NavStyled>
         <LinkStyled to="/">Volver</LinkStyled>
       </NavStyled>

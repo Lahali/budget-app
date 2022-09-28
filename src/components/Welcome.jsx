@@ -1,17 +1,17 @@
 import React from "react";
 
 import {
-  DivStyled,
+  DivStyledNoGrid,
   HeaderStyled,
   LinkStyled,
   WelcomeParragrafStyled,
-  NavStyled,
+  NavStyledNoGrid,
 } from "./Styles";
 
 const Welcome = () => {
   return (
     <div>
-      <DivStyled>
+      <DivStyledNoGrid>
         <HeaderStyled>
           <h2>Calcula tu presupuesto</h2>
         </HeaderStyled>
@@ -20,10 +20,10 @@ const Welcome = () => {
           <br />
           Entra y te hacemos un presupuesto que se ajuste a tus necesidades
         </WelcomeParragrafStyled>
-        <NavStyled>
+        <NavStyledNoGrid>
           <LinkStyled to="/budget">Calcular</LinkStyled>
-        </NavStyled>
-      </DivStyled>
+        </NavStyledNoGrid>
+      </DivStyledNoGrid>
     </div>
   );
 };

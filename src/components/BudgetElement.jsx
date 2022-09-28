@@ -15,7 +15,6 @@ const BudgetElement = ({ client, budgetName, budget, total, date }) => {
         <p>Campaña Google Ads: {budget.googleAds ? "sí" : "no"}</p>
         <p>Presupuesto total: {total} €</p>
         <p>Creado el: {formateDate(date)}</p>
-    
       </DivListStyled>
     </ContainerListStyled>
   );

@@ -1,9 +1,10 @@
 import React from "react";
 import BudgetElement from "./BudgetElement";
+import { ContainerScroll } from "./Styles";
 
-const ListBudget = ({ newBudget, client, budgetName, budget, total, date }) => {
+const ListBudget = ({ newBudget, client, budgetName, budget, total }) => {
   return (
-    <div>
+    <ContainerScroll>
       {newBudget.map((item) => (
         <BudgetElement
           key={item.id}
@@ -15,7 +16,7 @@ const ListBudget = ({ newBudget, client, budgetName, budget, total, date }) => {
           newBudget={newBudget}
         />
       ))}
-    </div>
+    </ContainerScroll>
   );
 };
 

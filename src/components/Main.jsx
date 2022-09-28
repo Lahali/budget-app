@@ -103,6 +103,13 @@ const Main = () => {
     getBudget();
   }, []);
 
+
+  // Ordenar alfabéticamente los proyectos
+  // const alphabeticOrderedBudget = (a, b) => {
+  //   return a.budgetName.localeCompare(b.budgetName)
+  // }
+
+
   return (
     <div>
       <Layout
@@ -118,6 +125,7 @@ const Main = () => {
         addBudgetList = {addBudgetList}
         handleSubmit={handleSubmit}
         newBudget={newBudget}
+        // alphabeticOrderedBudget={alphabeticOrderedBudget}
       />
     </div>
   );
