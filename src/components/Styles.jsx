@@ -81,6 +81,7 @@ export const DivStyled = styled.div`
   color: #006778;
   padding: 4rem;
   margin: auto;
+  border-left: 2px solid;
 `;
 
 export const FormStyled = styled.form`
@@ -88,6 +89,7 @@ export const FormStyled = styled.form`
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 3;
+  
 `
 
 export const NavStyled = styled.nav`
@@ -187,8 +189,10 @@ export const ContainerScroll = styled.div`
   grid-column-start: 3 ;
   grid-column-end: 6;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 4;
   overflow-y: scroll;
+  text-align: right;
+  border-left: 2px solid #afafaf;
 `;
 
 export const ContainerListStyled = styled.div`
@@ -197,6 +201,7 @@ export const ContainerListStyled = styled.div`
   align-items: center;
   width: 50%;
   margin: 1.5rem;
+  text-align: left;
 `;
 export const DivListStyled = styled.div`
   border-radius: 1rem;
@@ -220,3 +225,4 @@ export const NavStyledNoGrid = styled.nav`
   text-align: center;
   margin-top: 1rem;
 `;
+

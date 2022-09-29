@@ -18,6 +18,22 @@ const Main = () => {
 
   const [newBudget, setNewBudget] = useState([])
 
+  // para el buscador por palabras
+  const [searchField, setSearchField] = useState('')
+
+  // lógica del buscador
+  // hacemos un filter y pasamos todo a minúsculas: lo que entra en el input y lo que compara en el array
+  const filteredBudget = newBudget.filter(item => {
+    return (
+      item.budgetName.toLocaleLowerCase().startsWith(searchField.toLocaleLowerCase())
+    )
+  })
+  // ejecutamos la función desde el input
+  const handleFilter = (event) => {
+    setSearchField(event.target.value)
+  }
+
+
   const getClient = (event) => setClient(event.target.value)
   const getbudgetName = (event) => setbudgetName(event.target.value)
 
@@ -117,6 +133,8 @@ const Main = () => {
         addBudgetList = {addBudgetList}
         handleSubmit={handleSubmit}
         newBudget={newBudget}
+        handleFilter={handleFilter}
+        filteredBudget={filteredBudget}
       />
     </div>
   );
