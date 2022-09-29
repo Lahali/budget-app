@@ -190,6 +190,7 @@ export const ContainerScroll = styled.div`
   grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 4;
+  max-height: 800px;
   overflow-y: scroll;
   text-align: right;
   border-left: 2px solid #afafaf;
