@@ -52,7 +52,7 @@ const Main = () => {
       return alert("Faltan campos por rellenar")
     }
     addBudgetList({client, budgetName, total, budget})
-  
+    saveTotalBudget(newBudget)
   }
 
 
@@ -115,6 +115,13 @@ const Main = () => {
   useEffect(() => {
     getBudget();
   }, []);
+
+  // localStorage del presupuesto total
+  const saveTotalBudget = (newTotalBudget) => {
+    localStorage.setItem("totalBudget", JSON.stringify(newTotalBudget));
+  };
+  useEffect(() => {}, [newBudget]);
+
 
 
 

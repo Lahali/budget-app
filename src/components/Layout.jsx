@@ -11,7 +11,6 @@ import {
 import Panel from "./Panel";
 import ListBudget from "./ListBudget";
 import Searcher from "./Searcher";
-import BudgetElement from "./BudgetElement";
 
 const Layout = (props) => {
   return (
