@@ -7,8 +7,8 @@ const Main = () => {
     webSite: false,
     seoConsulting: false,
     googleAdds: false,
-    pages: 0,
-    languages: 0,
+    pages: 1,
+    languages: 1,
   });
 
   const [total, setTotal] = useState(0);
@@ -85,7 +85,8 @@ const Main = () => {
   const activateButton = (type, action) => {
     let newBudget = { ...budget };
     newBudget[type] =
-      action === "increase" ? newBudget[type] + 1 : newBudget[type] - 1;
+    action === "increase" ? newBudget[type] + 1 : newBudget[type] - 1;
+    if(newBudget[type] < 0) return 
     setBudget(newBudget);
     saveBudget(newBudget);
   };
