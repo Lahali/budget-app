@@ -51,6 +51,17 @@ const Main = () => {
     if([client, budgetName, total].includes('')) {
       return alert("Faltan campos por rellenar")
     }
+
+    setBudget({
+      webSite: false,
+      seoConsulting: false,
+    googleAdds: false,
+    pages: 1,
+    languages: 1
+    })
+    setClient('')
+    setbudgetName('')
+
     addBudgetList({client, budgetName, total, budget})
     saveTotalBudget(newBudget)
   }
