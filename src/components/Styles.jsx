@@ -1,16 +1,15 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from "react-router-dom"
+import styled from "styled-components"
 
 export const HeaderStyled = styled.header`
   margin: 1.5rem;
   font-size: larger;
   font-weight: bold;
   text-align: center;
-`;
+`
 
 export const PanelStyled = styled.div`
   display: flex;
-  /* flex-direction: column; */
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -21,17 +20,17 @@ export const PanelStyled = styled.div`
   border-radius: 1rem;
   margin: 1.5rem;
   box-shadow: 0.75rem 0.75rem 0.2rem #efefef;
-`;
+`
 
 export const ParragrafStyled = styled.p`
   line-height: 2rem;
-`;
+`
 
 export const WelcomeParragrafStyled = styled.p`
   margin: 2rem;
   line-height: 2rem;
   text-align: center;
-`;
+`
 
 export const ButtonStyled = styled.button`
   width: 2rem;
@@ -49,7 +48,7 @@ export const ButtonStyled = styled.button`
     background-color: #fff8bc;
     color: #00afc1;
   }
-`;
+`
 
 export const InputStyled = styled.input`
   width: 3rem;
@@ -59,7 +58,7 @@ export const InputStyled = styled.input`
   text-align: center;
   border: none;
   border-radius: 0.5rem;
-`;
+`
 
 export const LinkStyled = styled(Link)`
   color: #00afc1;
@@ -70,44 +69,14 @@ export const LinkStyled = styled(Link)`
   &:hover {
     color: #0093ab;
   }
-`;
-export const DivStyled = styled.div`
-
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 25% 25% 25% 25% ;
-
-
-  color: #006778;
-  padding: 4rem;
-  margin: auto;
-  border-left: 2px solid;
-`;
-
-export const FormStyled = styled.form`
-  grid-column-start: 1 ;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  
 `
 
-export const NavStyled = styled.nav`
-
-  grid-column-start: 1;
-  grid-column-end: 6;
-
-  grid-row-start: 5;
- 
-
-
-  background-color: #ffe9a0;
-  max-height: 5rem;
-  border-radius: 1rem;
-  padding: 10px;
-  max-width: 100vw;
-  text-align: center;
-`;
+export const FormStyled = styled.form`
+  /* grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3; */
+`
 
 export const ModalStyled = styled.div`
   display: flex;
@@ -118,7 +87,7 @@ export const ModalStyled = styled.div`
   left: 0;
   width: 100%;
   min-height: 100vh;
-`;
+`
 
 export const ModalContentStyled = styled.p`
   text-align: center;
@@ -129,7 +98,7 @@ export const ModalContentStyled = styled.p`
 
   margin-top: 16rem;
   background-color: #efefef;
-`;
+`
 
 export const ModalButton = styled.button`
   width: fit-content;
@@ -147,7 +116,7 @@ export const ModalButton = styled.button`
     background-color: #006778;
     color: #cdf0ea;
   }
-`;
+`
 
 export const InputTextStyled = styled.input`
   min-width: 5rem;
@@ -166,7 +135,7 @@ export const InputTextStyled = styled.input`
     border: solid 2px #afafaf;
     background-color: #efefef;
   }
-`;
+`
 
 export const ButtonStyledSave = styled.button`
   width: fit-content;
@@ -183,18 +152,7 @@ export const ButtonStyledSave = styled.button`
     background-color: #fff8bc;
     color: #00afc1;
   }
-`;
-
-export const ContainerScroll = styled.div`
-  grid-column-start: 3 ;
-  grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  max-height: 800px;
-  overflow-y: scroll;
-  text-align: right;
-  border-left: 2px solid #afafaf;
-`;
+`
 
 export const ContainerListStyled = styled.div`
   float: right;
@@ -203,19 +161,18 @@ export const ContainerListStyled = styled.div`
   width: 50%;
   margin: 1.5rem;
   text-align: left;
-`;
+`
 export const DivListStyled = styled.div`
   border-radius: 1rem;
   border: solid 2px #efefef;
   padding: 1rem;
-`;
+`
 
 export const DivStyledNoGrid = styled.div`
-
   color: #006778;
   padding: 5rem;
   margin: auto;
-`;
+`
 
 export const NavStyledNoGrid = styled.nav`
   background-color: #ffe9a0;
@@ -225,5 +182,4 @@ export const NavStyledNoGrid = styled.nav`
   max-width: 100vw;
   text-align: center;
   margin-top: 1rem;
-`;
-
+`
