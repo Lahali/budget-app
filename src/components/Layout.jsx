@@ -1,11 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import {
-  LinkStyled,
-  ButtonStyledSave,
-  InputTextStyled,
-  FormStyled,
-} from "./Styles"
+import { LinkStyled, FormStyled } from "./Styles"
+import { Button, Input } from "./styledComponents"
 import Panel from "./Panel"
 import ListBudget from "./ListBudget"
 import Searcher from "./Searcher"
@@ -13,7 +9,7 @@ import Searcher from "./Searcher"
 const ContainerStyled = styled.div`
   display: flex;
   flex-direction: row;
-  color: #006778;
+  color: #eeeeee;
   padding: 4rem;
   margin: auto;
   border-left: ${(borderLeft) => borderLeft || "none"};
@@ -46,7 +42,7 @@ const Layout = (props) => {
               onChange={props.updateBudget2}
               checked={props.budget.webSite}
             />
-            <LabelStyled>Una página web (500€)</LabelStyled>
+            <LabelStyled htmlFor="web">Una página web (500€)</LabelStyled>
           </DivStyled>
           {props.budget.webSite && (
             <Panel
@@ -63,7 +59,7 @@ const Layout = (props) => {
               onChange={props.updateBudget2}
               checked={props.budget.seoConsulting}
             />
-            <LabelStyled>Una consulta SEO (300€)</LabelStyled>
+            <LabelStyled htmlFor="seo">Una consulta SEO (300€)</LabelStyled>
           </DivStyled>
           <DivStyled>
             <input
@@ -72,22 +68,30 @@ const Layout = (props) => {
               onChange={props.updateBudget2}
               checked={props.budget.googleAdds}
             />
-            <LabelStyled>Una campaña Google Ads (200€)</LabelStyled>
+            <LabelStyled htmlFor="googleAds">
+              Una campaña Google Ads (200€)
+            </LabelStyled>
           </DivStyled>
           <DivStyled>
             <div>
-              <LabelStyled>
-                Añade tu nombre y da un nombre al presupuesto:{" "}
-              </LabelStyled>
+              <p>Añade tu nombre y da un nombre al presupuesto: </p>
               <DivStyled>
-                <InputTextStyled
+                <label htmlFor="name" />
+                <Input
+                  padding="10px"
+                  width="fit-content"
+                  boxShadow="none"
                   type="text"
                   name="name"
                   value={props.client}
                   onChange={props.getClient}
                   placeholder="nombre"
                 />
-                <InputTextStyled
+                <label htmlFor="badgetName" />
+                <Input
+                  marginLeft="10px"
+                  width="fit-content"
+                  boxShadow="none"
                   type="text"
                   name="budgetName"
                   value={props.budgetName}
@@ -101,7 +105,9 @@ const Layout = (props) => {
           <ParragrafStyled>Total: {props.total}</ParragrafStyled>
 
           {/* esto está conectado con el handleSubmit del form */}
-          <ButtonStyledSave type="submit">Guardar presupuesto</ButtonStyledSave>
+          <Button type="submit" width="fit-content" padding="1rem">
+            Guardar presupuesto
+          </Button>
           {props.newBudget.length > 0 && (
             <Searcher
               handleFilter={props.handleFilter}
@@ -110,7 +116,9 @@ const Layout = (props) => {
           )}
           <DivStyled>
             <LinkStyled to="/">
-              <ButtonStyledSave>Inicio</ButtonStyledSave>
+              <Button width="fit-content" padding="1rem">
+                Inicio
+              </Button>
             </LinkStyled>
           </DivStyled>
         </FormStyled>

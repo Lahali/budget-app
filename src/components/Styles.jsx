@@ -8,20 +8,6 @@ export const HeaderStyled = styled.header`
   text-align: center;
 `
 
-export const PanelStyled = styled.div`
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  border: solid 2px #efefef;
-  padding: 1rem;
-  width: fit-content;
-  height: auto;
-  border-radius: 1rem;
-  margin: 1.5rem;
-  box-shadow: 0.75rem 0.75rem 0.2rem #efefef;
-`
-
 export const ParragrafStyled = styled.p`
   line-height: 2rem;
 `
@@ -48,16 +34,6 @@ export const ButtonStyled = styled.button`
     background-color: #fff8bc;
     color: #00afc1;
   }
-`
-
-export const InputStyled = styled.input`
-  width: 3rem;
-  height: auto;
-  font-size: large;
-  box-shadow: 5px 5px 5px #efefef;
-  text-align: center;
-  border: none;
-  border-radius: 0.5rem;
 `
 
 export const LinkStyled = styled(Link)`
@@ -91,11 +67,10 @@ export const ModalStyled = styled.div`
 
 export const ModalContentStyled = styled.p`
   text-align: center;
+  border-radius: 3px;
   padding: 1rem;
   width: fit-content;
   height: fit-content;
-  border-radius: 1rem;
-
   margin-top: 16rem;
   background-color: #efefef;
 `
@@ -134,23 +109,6 @@ export const InputTextStyled = styled.input`
     outline: none;
     border: solid 2px #afafaf;
     background-color: #efefef;
-  }
-`
-
-export const ButtonStyledSave = styled.button`
-  width: fit-content;
-  height: auto;
-  border-radius: 0.5rem;
-  font-size: 18px;
-  font-weight: bolder;
-  text-align: center;
-  background-color: #00afc1;
-  color: #fff8bc;
-  border: solid 2px #00afc1;
-  padding: 1rem;
-  &:hover {
-    background-color: #fff8bc;
-    color: #00afc1;
   }
 `
 
