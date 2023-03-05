@@ -18,23 +18,23 @@ export const WelcomeParragrafStyled = styled.p`
   text-align: center;
 `
 
-export const ButtonStyled = styled.button`
-  width: 2rem;
-  height: auto;
-  border-radius: 0.5rem;
-  font-size: 1.4rem;
-  font-weight: bolder;
-  text-align: center;
-  background-color: #00afc1;
-  color: #fff8bc;
-  border: solid 2px #00afc1;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  &:hover {
-    background-color: #fff8bc;
-    color: #00afc1;
-  }
-`
+// export const ButtonStyled = styled.button`
+//   width: 2rem;
+//   height: auto;
+//   border-radius: 0.5rem;
+//   font-size: 1.4rem;
+//   font-weight: bolder;
+//   text-align: center;
+//   background-color: #00afc1;
+//   color: #fff8bc;
+//   border: solid 2px #00afc1;
+//   margin-left: 0.5rem;
+//   margin-right: 0.5rem;
+//   &:hover {
+//     background-color: #fff8bc;
+//     color: #00afc1;
+//   }
+// `
 
 export const LinkStyled = styled(Link)`
   color: #00afc1;
@@ -93,38 +93,38 @@ export const ModalButton = styled.button`
   }
 `
 
-export const InputTextStyled = styled.input`
-  min-width: 5rem;
-  height: auto;
-  font-size: large;
-  box-shadow: 3px 3px 3px #efefef;
-  text-align: center;
-  border: solid 2px #efefef;
-  border-radius: 0.5rem;
-  padding: 0.75rem;
-  margin-right: 1rem;
-  margin-top: 0.5rem;
-  background-color: white;
-  &:focus {
-    outline: none;
-    border: solid 2px #afafaf;
-    background-color: #efefef;
-  }
-`
+// export const InputTextStyled = styled.input`
+//   min-width: 5rem;
+//   height: auto;
+//   font-size: large;
+//   box-shadow: 3px 3px 3px #efefef;
+//   text-align: center;
+//   border: solid 2px #efefef;
+//   border-radius: 0.5rem;
+//   padding: 0.75rem;
+//   margin-right: 1rem;
+//   margin-top: 0.5rem;
+//   background-color: white;
+//   &:focus {
+//     outline: none;
+//     border: solid 2px #afafaf;
+//     background-color: #efefef;
+//   }
+// `
 
-export const ContainerListStyled = styled.div`
-  float: right;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  margin: 1.5rem;
-  text-align: left;
-`
-export const DivListStyled = styled.div`
-  border-radius: 1rem;
-  border: solid 2px #efefef;
-  padding: 1rem;
-`
+// export const ContainerListStyled = styled.div`
+//   float: right;
+//   justify-content: center;
+//   align-items: center;
+//   width: 50%;
+//   margin: 1.5rem;
+//   text-align: left;
+// `
+// export const DivListStyled = styled.div`
+//   border-radius: 1rem;
+//   border: solid 2px #efefef;
+//   padding: 1rem;
+// `
 
 export const DivStyledNoGrid = styled.div`
   color: #006778;
