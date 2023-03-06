@@ -18,9 +18,16 @@ const InputGroupContainer = styled.div`
   color: #222831;
 `
 
+const Container = styled.div`
+  background-color: #efefef;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 3px;
+`
+
 const Panel = (props) => {
   return (
-    <>
+    <Container>
       <InputGroupContainer>
         <label>Número de páginas</label>
         {/* callback para pasar elementos */}
@@ -68,7 +75,7 @@ const Panel = (props) => {
         </Button>
         <Modal text="¿Cuántos idiomas necesitas? Pon mínimo uno" />
       </InputGroupContainer>
-    </>
+    </Container>
   )
 }
 

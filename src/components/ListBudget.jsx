@@ -6,11 +6,18 @@ const ContainerScroll = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40vw;
+  width: 45vw;
   max-height: 80vh;
   overflow-y: scroll;
   text-align: right;
   border-left: 2px solid #afafaf;
+
+  &::-webkit-scrollbar-track {
+    background-color: #222222;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: #afafaf;
+  }
 `
 
 const ListBudget = ({ newBudget, filteredBudget }) => {
