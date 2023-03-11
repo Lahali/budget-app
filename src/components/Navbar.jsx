@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Button } from "./styledComponents"
-import { LinkStyled } from "./Styles"
+import { Link } from "react-router-dom"
 
 const NavStyled = styled.nav`
   width: 100%;
@@ -13,7 +13,7 @@ const NavStyled = styled.nav`
 const Navbar = () => {
   return (
     <NavStyled>
-      <LinkStyled to="/">
+      <Link to="/">
         <Button
           hoverColor="#00ABB3"
           bgColor="transparent"
@@ -23,7 +23,7 @@ const Navbar = () => {
         >
           Inicio
         </Button>
-      </LinkStyled>
+      </Link>
     </NavStyled>
   )
 }

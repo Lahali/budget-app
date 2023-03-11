@@ -1,39 +1,11 @@
-import { Link } from "react-router-dom"
 import styled from "styled-components"
-
-export const HeaderStyled = styled.header`
-  margin: 1.5rem;
-  font-size: larger;
-  font-weight: bold;
-  text-align: center;
-`
 
 export const ParragrafStyled = styled.p`
   line-height: 2rem;
 `
 
-export const WelcomeParragrafStyled = styled.p`
-  margin: 2rem;
-  line-height: 2rem;
-  text-align: center;
-`
-
-export const LinkStyled = styled(Link)`
-  color: #00afc1;
-  text-decoration: none;
-  font-size: large;
-  font-weight: bold;
-
-  &:hover {
-    color: #0093ab;
-  }
-`
-
 export const FormStyled = styled.form`
-  /* grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 3; */
+  margin-top: 5rem;
 `
 
 export const ModalStyled = styled.div`
@@ -73,20 +45,4 @@ export const ModalButton = styled.button`
     background-color: #006778;
     color: #cdf0ea;
   }
-`
-
-export const DivStyledNoGrid = styled.div`
-  color: #006778;
-  padding: 5rem;
-  margin: auto;
-`
-
-export const NavStyledNoGrid = styled.nav`
-  background-color: #ffe9a0;
-  max-height: 4rem;
-  border-radius: 1rem;
-  padding: 10px;
-  max-width: 100vw;
-  text-align: center;
-  margin-top: 1rem;
 `

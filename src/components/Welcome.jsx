@@ -1,31 +1,43 @@
-import React from "react";
+import React from "react"
+import styled from "styled-components"
+import { Link } from "react-router-dom"
+import { Button } from "./styledComponents"
+import team from "../assets/images/team-bro.svg"
 
-import {
-  DivStyledNoGrid,
-  HeaderStyled,
-  LinkStyled,
-  WelcomeParragrafStyled,
-  NavStyledNoGrid,
-} from "./Styles";
+const ContainerStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  color: #222222;
+  margin-left: 1rem;
+  padding: 1rem;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const ParragrafStyled = styled.p`
+  font-size: larger;
+`
 
 const Welcome = () => {
   return (
-    <div>
-      <DivStyledNoGrid>
-        <HeaderStyled>
-          <h2>Calcula tu presupuesto</h2>
-        </HeaderStyled>
-        <WelcomeParragrafStyled>
-          ¿Necesitas una página web?
-          <br />
+    <ContainerStyled>
+      <div>
+        <h2>Calcula tu presupuesto</h2>
+        <ParragrafStyled>¿Necesitas una página web?</ParragrafStyled>
+        <ParragrafStyled>
           Entra y te hacemos un presupuesto que se ajuste a tus necesidades
-        </WelcomeParragrafStyled>
-        <NavStyledNoGrid>
-          <LinkStyled to="/budget">Calcular</LinkStyled>
-        </NavStyledNoGrid>
-      </DivStyledNoGrid>
-    </div>
-  );
-};
+        </ParragrafStyled>
+        <Link to="/budget">
+          <Button width="fit-content" padding="1rem">
+            Calcular
+          </Button>
+        </Link>
+      </div>
 
-export default Welcome;
+      <img style={{ maxWidth: "500px" }} src={team} alt="team" />
+    </ContainerStyled>
+  )
+}
+
+export default Welcome
