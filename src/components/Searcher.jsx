@@ -7,8 +7,9 @@ const Searcher = (props) => {
     <div>
       <ParragrafStyled>¿Qué presupuesto buscas?</ParragrafStyled>
       <Input
+        padding="10px"
+        width="fit-content"
         boxShadow="none"
-        padding="0.75rem"
         type="text"
         marginLeft="0.5rem"
         onChange={props.handleFilter}

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const InputStyled = styled.input`
   padding: ${({ padding }) => padding || "1px"};
-  min-width: ${({ minWidth }) => minWidth || "10rem"};
+  max-width: ${({ maxWidth }) => maxWidth || "10rem"};
   width: ${({ width }) => width || "3rem"};
   height: ${({ height }) => height || "auto"};
   font-size: ${({ fontSize }) => fontSize || "large"};

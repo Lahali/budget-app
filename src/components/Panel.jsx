@@ -19,10 +19,11 @@ const InputGroupContainer = styled.div`
 `
 
 const Container = styled.div`
-  background-color: #efefef;
+  background-color: white;
   padding: 1rem;
   margin-top: 1rem;
   border-radius: 3px;
+  max-width: fit-content;
 `
 
 const Panel = (props) => {

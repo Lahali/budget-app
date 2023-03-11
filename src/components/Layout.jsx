@@ -1,15 +1,17 @@
 import React from "react"
 import styled from "styled-components"
-import { LinkStyled, FormStyled } from "./Styles"
+import { FormStyled } from "./Styles"
 import { Button, Input } from "./styledComponents"
 import Panel from "./Panel"
 import ListBudget from "./ListBudget"
 import Searcher from "./Searcher"
+import Navbar from "./Navbar"
+import design from "../assets/images/design.svg"
 
 const ContainerStyled = styled.div`
   display: flex;
   flex-direction: row;
-  color: #eeeeee;
+  color: #222222;
   padding: 4rem;
   margin: auto;
   border-left: ${(borderLeft) => borderLeft || "none"};
@@ -31,6 +33,7 @@ const LabelStyled = styled.label`
 const Layout = (props) => {
   return (
     <>
+      <Navbar />
       <ContainerStyled>
         {/* Así tenemos unidos el botón y el form para que funcione */}
         <FormStyled onSubmit={props.handleSubmit}>
@@ -114,16 +117,9 @@ const Layout = (props) => {
               filteredBudget={props.filteredBudget}
             />
           )}
-          <DivStyled>
-            <LinkStyled to="/">
-              <Button width="fit-content" padding="1rem">
-                Inicio
-              </Button>
-            </LinkStyled>
-          </DivStyled>
         </FormStyled>
         <DivStyled>
-          {props.newBudget.length > 0 && (
+          {props.newBudget.length > 0 ? (
             <ListBudget
               borderLeft="2px solid"
               newBudget={props.newBudget}
@@ -133,6 +129,8 @@ const Layout = (props) => {
               total={props.total}
               filteredBudget={props.filteredBudget}
             />
+          ) : (
+            <img src={design} alt="people drawing" />
           )}
         </DivStyled>
       </ContainerStyled>
