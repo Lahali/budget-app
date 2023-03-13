@@ -10,11 +10,15 @@ import design from "../assets/images/design.svg"
 
 const ContainerStyled = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   color: #222222;
   padding: 4rem;
   margin: auto;
   border-left: ${(borderLeft) => borderLeft || "none"};
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 const DivStyled = styled.div`
   display: flex;
